@@ -111,6 +111,7 @@ exports.sourceNodes = async (
           name: file.name,
           path: file.path_display,
           lastModified: file.client_modified,
+          localFile___NODE: '',
         },
         dbx,
         createNode,
@@ -119,6 +120,6 @@ exports.sourceNodes = async (
         cache,
         createNodeId,
       })
-      createNode(node)
+      createNode(node, { name: 'gatsby-source-dropbox' });
     }))
 }
